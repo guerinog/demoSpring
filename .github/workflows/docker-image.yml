@@ -27,12 +27,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: guerinog/demospring:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
-      -
-        name: Aggiorno la minor version
-        uses: hmanzur/actions-set-secret@v2.0.0
-        with:
-          name: 'MINOR'
-          value: $((${{ secrets.MINOR }}+1))
-          repository: guerinog/demoSpring
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          tags: guerinog/demospring:latest
